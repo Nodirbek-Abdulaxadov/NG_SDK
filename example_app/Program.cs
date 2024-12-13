@@ -5,17 +5,40 @@ class Program
     [STAThread]
     static void Main(string[] args)
     {
-        var graphicsAPI = new GraphicsAPI();
+        try
+        {
+            // Set the printer name or IP address
+            string printerName = "192.168.1.100:9100"; // Update with your printer name or address
 
-        Console.WriteLine("Initializing window...");
-        graphicsAPI.Initialize();
+            // Create Printer API instance
+            PrinterAPI printer = new PrinterAPI(printerName);
 
-        Console.WriteLine("Running event loop...");
-        graphicsAPI.Run();
+            // Print text
+            printer.PrintText("Hello, ESC/POS Printer!");
 
-        Thread.Sleep(10000);
+            Console.WriteLine("Text printed successfully.");
 
-        Console.WriteLine("Terminating window...");
-        graphicsAPI.Terminate();
+            // Perform a full paper cut
+            printer.CutPaper(true);
+
+            Console.WriteLine("Paper cut successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+
+        // var graphicsAPI = new GraphicsAPI();
+
+        // Console.WriteLine("Initializing window...");
+        // graphicsAPI.Initialize();
+
+        // Console.WriteLine("Running event loop...");
+        // graphicsAPI.Run();
+
+        // Thread.Sleep(10000);
+
+        // Console.WriteLine("Terminating window...");
+        // graphicsAPI.Terminate();
     }
 }

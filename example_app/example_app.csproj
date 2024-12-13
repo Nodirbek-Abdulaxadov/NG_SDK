@@ -12,13 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="graphics_engine.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\csharp-wrapper\csharp-wrapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\csharp-wrapper\csharp-wrapper.csproj" />
+    <Resource Include="graphics_engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
