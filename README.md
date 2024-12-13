@@ -1,3 +1,5 @@
+# NG_SDK - Native Graphics SDK for .NET
+
 Using **Rust** for a cross-platform native graphics SDK is an excellent choice, particularly because Rust is designed for safety, performance, and cross-platform compatibility. Rust provides powerful libraries such as `winit` for windowing and `wgpu` for GPU graphics, which you can expose to C# via **FFI (Foreign Function Interface)** or through higher-level bindings.
 
 Here’s how you can implement a cross-platform native graphics SDK in Rust and integrate it with C#:
